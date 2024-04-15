@@ -49,6 +49,7 @@ public class VideoShop {
 		 *
 		 * @see org.springframework.web.servlet.config.annotation.WebMvcConfigurer#addViewControllers(org.springframework.web.servlet.config.annotation.ViewControllerRegistry)
 		 */
+		@SuppressWarnings("null")
 		@Override
 		public void addViewControllers(ViewControllerRegistry registry) {
 			registry.addViewController(LOGIN_ROUTE).setViewName("login");

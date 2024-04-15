@@ -34,6 +34,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.mysema.commons.lang.Assert;
+
+
 @Controller
 class CatalogController {
 
@@ -85,6 +88,23 @@ class CatalogController {
 
 		return "detail";
 	}
+
+
+@PostMapping("/addDisc")
+String postAddDisc(AddDisc form) {
+	Assert.notNull(form, "null");
+	Disc disc = new Disc(form.getName(),"gmp" ,form.getPrice(),form.getGenre(), form.getType());
+	catalog.save(disc);
+	inventory.save(new UniqueInventoryItem(disc, Quantity.of(10)));
+    
+    return "redirect:/";
+}
+
+@GetMapping("/addDisc")
+String register(Model model, AddDisc form) {
+
+	return "addDisc";
+}
 
 	@PostMapping("/disc/{disc}/comments")
 	public String comment(@PathVariable Disc disc, @Valid CommentAndRating form, Errors errors) {

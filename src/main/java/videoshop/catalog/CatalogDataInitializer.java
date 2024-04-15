@@ -88,4 +88,7 @@ class CatalogDataInitializer implements DataInitializer {
 		videoCatalog.save(new Disc("Bill & Ted's Excellent Adventure", "bt", Money.of(29.99, EURO),
 				"Adventure/Comedy/Family", DiscType.BLURAY));
 	}
+
+
+	
 }

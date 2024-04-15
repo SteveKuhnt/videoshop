@@ -31,6 +31,7 @@ interface CustomerRepository extends CrudRepository<Customer, CustomerIdentifier
 	/**
 	 * Re-declared {@link CrudRepository#findAll()} to return a {@link Streamable} instead of {@link Iterable}.
 	 */
+	@SuppressWarnings("null")
 	@Override
 	Streamable<Customer> findAll();
 }

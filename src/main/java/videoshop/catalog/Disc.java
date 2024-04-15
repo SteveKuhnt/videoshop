@@ -61,6 +61,7 @@ public class Disc extends Product {
 		this.type = type;
 	}
 
+
 	public String getGenre() {
 		return genre;
 	}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout.html}">
+    <head>
+    </head>
+    <body>
+        <section layout:fragment="content">
+            <form class="ui form" role="form" th:action="@{/addDisc}" method="post">
+                <!-- add name -->
+                <div class="field">
+                    <label th:text="#{disc.name}" >DiscName</label>
+                    <input type="text" id="name" name="name"/> <br/>
+                </div>
+                <!-- add price -->
+                <div class="field">
+                    <label th:text="#{disc.price}">DiscPrice</label>
+                    <input type="number" min="0.00" max="10000.00" step="0.01" id="price" name="Preis"/> <br/>
+                </div>
+                <!-- add genre -->
+                <div class="field">
+                    <label th:text="#{disc.genre}" >DiscGenre</label>
+                    <input type="text" id="genre" name="genre"/> <br/>
+                </div>
+                <!-- add Type -->
+                <div class="field">
+                    <label th:text="#{disc.type}">DiscType</label>
+                    <input type="text" id="addType" name="Typ"/> <br/>
+                </div>
+                
+                
+
+
+                <button type="submit" th:text="#{disc.create}" class="ui button">Disc Hinzufügen</button>
+            </form>
+        </section>
+    </body>
+</html>
